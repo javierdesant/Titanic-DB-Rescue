@@ -1,3 +1,4 @@
+# TODO: find a better db name
 CREATE DATABASE SpaceTitanicDB;
 USE SpaceTitanicDB;
 
