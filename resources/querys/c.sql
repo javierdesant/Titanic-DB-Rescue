@@ -1,9 +1,9 @@
-# c) Resolver en SQL la consulta: “Obtener el listado de los pasajeros que han
+# c) Obtener el listado de los pasajeros que han
 # embarcado obteniendo para cada uno su nombre, cabina asignada (con formato:
 # Letra Cubierta-Número Cabina-Lado Cabina, por ejemplo “B-1-P”) y planeta destino
 # al que viajaban (incluyendo el sistema al que pertenece), de aquellos pasajeros
 # cuya cabina esta localizada en una cubierta de tercera clase desde la letra A a
-# la D y que no están en criosueño”.
+# la D y que no están en criosueño.
 
 SELECT nombre,
        CONCAT(c.letra, '-', numero_cabina, '-', lado_cabina) AS cabina_asignada,
