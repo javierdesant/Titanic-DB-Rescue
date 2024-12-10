@@ -21,24 +21,29 @@ CREATE TABLE passengers
         ON DELETE SET NULL
         ON UPDATE CASCADE,
     FOREIGN KEY (birthPlanet, birthSystem) REFERENCES planets (planetName, systemName)
-        ON DELETE NO ACTION
+        ON DELETE RESTRICT
         ON UPDATE CASCADE,
     FOREIGN KEY (destinationPlanet, destinationSystem) REFERENCES planets (planetName, systemName)
-        ON DELETE NO ACTION
+        ON DELETE RESTRICT
         ON UPDATE CASCADE,
     FOREIGN KEY (cabinNumber, side, letter) REFERENCES cabins (cabinNumber, side, letter)
-        ON DELETE SET NULL
+        ON DELETE RESTRICT
         ON UPDATE CASCADE
 );
 
+# FIXME: expenses referential structure is not clear
 CREATE TABLE expenses
 (
-    expenseId   INT PRIMARY KEY AUTO_INCREMENT,
-    passengerId INT            NOT NULL,
-    facility    VARCHAR(100)   NOT NULL,
+    passengerId INT,
+    facility    VARCHAR(100),
     amount      DECIMAL(10, 2) NOT NULL,
-    FOREIGN KEY (facility) REFERENCES entertainment (facility),
+    PRIMARY KEY (passengerId, facility),
     FOREIGN KEY (passengerId) REFERENCES passengers (passengerId)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE,
+    FOREIGN KEY (facility) REFERENCES entertainment (facility)
+        ON DELETE RESTRICT
+        ON UPDATE CASCADE
 );
 
 CREATE TABLE cabins
@@ -52,6 +57,8 @@ CREATE TABLE cabins
         ON DELETE CASCADE
         ON UPDATE CASCADE,
     FOREIGN KEY (robotId) REFERENCES robots (robotId)
+        ON DELETE SET NULL
+        ON UPDATE CASCADE
 );
 
 CREATE TABLE decks
@@ -79,10 +86,10 @@ CREATE TABLE breakdowns
     date       DATE NOT NULL,
     PRIMARY KEY (robotId, mechanicId, date),
     FOREIGN KEY (robotId) REFERENCES robots (robotId)
-        ON DELETE NO ACTION
+        ON DELETE CASCADE
         ON UPDATE CASCADE,
     FOREIGN KEY (mechanicId) REFERENCES mechanics (mechanicId)
-        ON DELETE NO ACTION
+        ON DELETE RESTRICT
         ON UPDATE CASCADE
 );
 
@@ -103,6 +110,7 @@ CREATE TABLE satellites
     PRIMARY KEY (satelliteName, planetName, systemName),
     FOREIGN KEY (planetName, systemName) REFERENCES planets (planetName, systemName)
         ON DELETE CASCADE
+        ON UPDATE CASCADE
 );
 
 CREATE TABLE elements
