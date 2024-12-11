@@ -6,10 +6,10 @@ SELECT cubierta, lado_cabina AS lado, numero_cabina AS numero
 FROM pasajeros p
          JOIN gastos g ON p.id = g.pasajero
 WHERE vip = 0
-GROUP BY cubierta, lado, numero
-HAVING COUNT(id) > 3
-   AND SUM(cantidad) > 2 * (SELECT AVG(total)
+GROUP BY cubierta, lado_cabina, numero_cabina
+HAVING SUM(cantidad) > 2 * (SELECT AVG(total)
                             FROM (SELECT SUM(cantidad) AS total
                                   FROM pasajeros p
                                            JOIN gastos g ON p.id = g.pasajero
-                                  GROUP BY cubierta, lado_cabina, numero_cabina) AS t1);
+                                  GROUP BY cubierta, lado_cabina, numero_cabina) AS t1)
+   AND COUNT(id) > 3;
