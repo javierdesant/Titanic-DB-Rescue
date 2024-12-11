@@ -7,8 +7,8 @@
       "details": {
         "name": "Pasajero",
         "type": "regular",
-        "x": 320,
-        "y": 212.8000030517578,
+        "x": 303,
+        "y": 229.8000030517578,
         "isDisjointed": true,
         "isTotalSpecialization": true,
         "isSubtype": false,
@@ -134,28 +134,14 @@
       "type": "Entity",
       "details": {
         "name": "Planeta",
-        "type": "weak",
-        "x": 928,
-        "y": 225.89999389648438,
+        "type": "regular",
+        "x": 876,
+        "y": 217.89999389648438,
         "isDisjointed": true,
         "isTotalSpecialization": true,
         "isSubtype": false,
         "supertypeEntityId": null,
         "id": 12
-      }
-    },
-    {
-      "type": "Entity",
-      "details": {
-        "name": "Sistema",
-        "type": "regular",
-        "x": 958,
-        "y": 65.89999389648438,
-        "isDisjointed": true,
-        "isTotalSpecialization": true,
-        "isSubtype": false,
-        "supertypeEntityId": null,
-        "id": 13
       }
     },
     {
@@ -219,36 +205,6 @@
     {
       "type": "Relationship",
       "details": {
-        "name": "componen",
-        "isIdentifying": true,
-        "x": 959,
-        "y": 145,
-        "slots": [
-          {
-            "slotIndex": 0,
-            "minimum": "0",
-            "maximum": "N",
-            "participation": "unspecified",
-            "cardinality": "unspecified",
-            "role": "",
-            "entityId": 13
-          },
-          {
-            "slotIndex": 1,
-            "minimum": "1",
-            "maximum": "1",
-            "participation": "unspecified",
-            "cardinality": "unspecified",
-            "role": "",
-            "entityId": 12
-          }
-        ],
-        "id": 25
-      }
-    },
-    {
-      "type": "Relationship",
-      "details": {
         "name": "tiene",
         "isIdentifying": true,
         "x": 1013,
@@ -287,7 +243,7 @@
           {
             "slotIndex": 0,
             "minimum": "0",
-            "maximum": "N",
+            "maximum": "",
             "participation": "unspecified",
             "cardinality": "unspecified",
             "role": "",
@@ -296,7 +252,7 @@
           {
             "slotIndex": 1,
             "minimum": "1",
-            "maximum": "M",
+            "maximum": "1",
             "participation": "unspecified",
             "cardinality": "unspecified",
             "role": "",
@@ -371,13 +327,13 @@
       "details": {
         "name": "asignado a",
         "isIdentifying": false,
-        "x": 396,
+        "x": 331,
         "y": 722,
         "slots": [
           {
             "slotIndex": 0,
             "minimum": "0",
-            "maximum": "N",
+            "maximum": "1",
             "participation": "unspecified",
             "cardinality": "unspecified",
             "role": "",
@@ -431,8 +387,8 @@
       "details": {
         "name": "tutela",
         "isIdentifying": false,
-        "x": 280,
-        "y": 90.89999389648438,
+        "x": 282,
+        "y": 75.89999389648438,
         "slots": [
           {
             "slotIndex": 0,
@@ -445,8 +401,8 @@
           },
           {
             "slotIndex": 1,
-            "minimum": "1",
-            "maximum": "M",
+            "minimum": "0",
+            "maximum": "1",
             "participation": "unspecified",
             "cardinality": "unspecified",
             "role": "tutelado",
@@ -459,28 +415,28 @@
     {
       "type": "Attribute",
       "details": {
-        "name": "Nombre",
+        "name": "Nombre Sistema",
         "isDerived": false,
         "isMultivalued": false,
         "isOptional": false,
         "isComposite": false,
         "isUnique": true,
-        "x": 1092,
-        "y": 61.899993896484375,
+        "x": 1022,
+        "y": 98.89999389648438,
         "id": 56
       }
     },
     {
       "type": "Attribute",
       "details": {
-        "name": "Nombre",
+        "name": "Nombre Planeta",
         "isDerived": false,
         "isMultivalued": false,
         "isOptional": false,
         "isComposite": false,
         "isUnique": true,
-        "x": 1086,
-        "y": 169.89999389648438,
+        "x": 1034,
+        "y": 161.89999389648438,
         "id": 58
       }
     },
@@ -507,8 +463,8 @@
         "isOptional": false,
         "isComposite": false,
         "isUnique": false,
-        "x": 1095,
-        "y": 228.89999389648438,
+        "x": 1043,
+        "y": 220.89999389648438,
         "id": 64
       }
     },
@@ -521,8 +477,8 @@
         "isOptional": false,
         "isComposite": false,
         "isUnique": false,
-        "x": 1079,
-        "y": 289.8999938964844,
+        "x": 1027,
+        "y": 281.8999938964844,
         "id": 66
       }
     },
@@ -535,8 +491,8 @@
         "isOptional": false,
         "isComposite": false,
         "isUnique": true,
-        "x": 442,
-        "y": 246.89999389648438,
+        "x": 444,
+        "y": 266.8999938964844,
         "id": 68
       }
     },
@@ -549,8 +505,8 @@
         "isOptional": false,
         "isComposite": false,
         "isUnique": false,
-        "x": 446,
-        "y": 304.8999938964844,
+        "x": 462,
+        "y": 319.8999938964844,
         "id": 70
       }
     },
@@ -563,8 +519,8 @@
         "isOptional": false,
         "isComposite": false,
         "isUnique": false,
-        "x": 519,
-        "y": 352.8999938964844,
+        "x": 539,
+        "y": 361.8999938964844,
         "id": 72
       }
     },
@@ -607,8 +563,8 @@
         "isOptional": false,
         "isComposite": false,
         "isUnique": true,
-        "x": 153,
-        "y": 99.80000305175781,
+        "x": 136,
+        "y": 116.80000305175781,
         "id": 123
       }
     },
@@ -621,8 +577,8 @@
         "isOptional": false,
         "isComposite": false,
         "isUnique": false,
-        "x": 100,
-        "y": 149.8000030517578,
+        "x": 83,
+        "y": 166.8000030517578,
         "id": 125
       }
     },
@@ -635,8 +591,8 @@
         "isOptional": false,
         "isComposite": false,
         "isUnique": false,
-        "x": 67,
-        "y": 202.8000030517578,
+        "x": 50,
+        "y": 219.8000030517578,
         "id": 127
       }
     },
@@ -649,8 +605,8 @@
         "isOptional": false,
         "isComposite": false,
         "isUnique": false,
-        "x": 67,
-        "y": 257.8000030517578,
+        "x": 50,
+        "y": 274.8000030517578,
         "id": 129
       }
     },
@@ -663,8 +619,8 @@
         "isOptional": false,
         "isComposite": false,
         "isUnique": false,
-        "x": 94,
-        "y": 311.8000030517578,
+        "x": 77,
+        "y": 328.8000030517578,
         "id": 131
       }
     },
@@ -677,8 +633,8 @@
         "isOptional": false,
         "isComposite": false,
         "isUnique": false,
-        "x": 147,
-        "y": 360.8000030517578,
+        "x": 130,
+        "y": 377.8000030517578,
         "id": 133
       }
     },
@@ -865,94 +821,6 @@
       }
     },
     {
-      "type": "Entity",
-      "details": {
-        "name": "Atmósfera",
-        "type": "weak",
-        "x": 788.2000122070312,
-        "y": 361.1999969482422,
-        "isDisjointed": true,
-        "isTotalSpecialization": true,
-        "isSubtype": false,
-        "supertypeEntityId": null,
-        "id": 191
-      }
-    },
-    {
-      "type": "Relationship",
-      "details": {
-        "name": "forma",
-        "isIdentifying": false,
-        "x": 655,
-        "y": 330,
-        "slots": [
-          {
-            "slotIndex": 0,
-            "minimum": "",
-            "maximum": "",
-            "participation": "unspecified",
-            "cardinality": "unspecified",
-            "role": "",
-            "entityId": 15
-          },
-          {
-            "slotIndex": 1,
-            "minimum": "1",
-            "maximum": "N",
-            "participation": "unspecified",
-            "cardinality": "unspecified",
-            "role": "",
-            "entityId": 191
-          }
-        ],
-        "id": 192
-      }
-    },
-    {
-      "type": "Relationship",
-      "details": {
-        "name": "tiene",
-        "isIdentifying": true,
-        "x": 898,
-        "y": 311,
-        "slots": [
-          {
-            "slotIndex": 0,
-            "minimum": "1",
-            "maximum": "1",
-            "participation": "unspecified",
-            "cardinality": "unspecified",
-            "role": "",
-            "entityId": 191
-          },
-          {
-            "slotIndex": 1,
-            "minimum": "0",
-            "maximum": "1",
-            "participation": "unspecified",
-            "cardinality": "unspecified",
-            "role": "",
-            "entityId": 12
-          }
-        ],
-        "id": 195
-      }
-    },
-    {
-      "type": "Attribute",
-      "details": {
-        "name": "ID",
-        "isDerived": false,
-        "isMultivalued": false,
-        "isOptional": false,
-        "isComposite": false,
-        "isUnique": true,
-        "x": 785.2000122070312,
-        "y": 280.1999969482422,
-        "id": 198
-      }
-    },
-    {
       "type": "Relationship",
       "details": {
         "name": "viaja hacia",
@@ -980,6 +848,36 @@
           }
         ],
         "id": 200
+      }
+    },
+    {
+      "type": "Relationship",
+      "details": {
+        "name": "Atmósfera",
+        "isIdentifying": false,
+        "x": 734,
+        "y": 264.5,
+        "slots": [
+          {
+            "slotIndex": 0,
+            "minimum": "0",
+            "maximum": "",
+            "participation": "unspecified",
+            "cardinality": "unspecified",
+            "role": "",
+            "entityId": 12
+          },
+          {
+            "slotIndex": 1,
+            "minimum": "1",
+            "maximum": "",
+            "participation": "unspecified",
+            "cardinality": "unspecified",
+            "role": "",
+            "entityId": 15
+          }
+        ],
+        "id": 289
       }
     }
   ],
@@ -1019,24 +917,6 @@
       },
       "source": 2,
       "destination": 16
-    },
-    {
-      "type": "RelationshipConnector",
-      "details": {
-        "slotIndex": 0,
-        "id": 26
-      },
-      "source": 13,
-      "destination": 25
-    },
-    {
-      "type": "RelationshipConnector",
-      "details": {
-        "slotIndex": 1,
-        "id": 27
-      },
-      "source": 12,
-      "destination": 25
     },
     {
       "type": "RelationshipConnector",
@@ -1167,15 +1047,7 @@
     {
       "type": "Connector",
       "details": {
-        "id": 164
-      },
-      "source": 56,
-      "destination": 13
-    },
-    {
-      "type": "Connector",
-      "details": {
-        "id": 165
+        "id": 261
       },
       "source": 58,
       "destination": 12
@@ -1183,7 +1055,7 @@
     {
       "type": "Connector",
       "details": {
-        "id": 166
+        "id": 262
       },
       "source": 60,
       "destination": 14
@@ -1191,7 +1063,7 @@
     {
       "type": "Connector",
       "details": {
-        "id": 167
+        "id": 263
       },
       "source": 64,
       "destination": 12
@@ -1199,7 +1071,7 @@
     {
       "type": "Connector",
       "details": {
-        "id": 168
+        "id": 264
       },
       "source": 66,
       "destination": 12
@@ -1207,7 +1079,7 @@
     {
       "type": "Connector",
       "details": {
-        "id": 169
+        "id": 265
       },
       "source": 68,
       "destination": 15
@@ -1215,7 +1087,7 @@
     {
       "type": "Connector",
       "details": {
-        "id": 170
+        "id": 266
       },
       "source": 70,
       "destination": 15
@@ -1223,7 +1095,7 @@
     {
       "type": "Connector",
       "details": {
-        "id": 171
+        "id": 267
       },
       "source": 72,
       "destination": 15
@@ -1249,7 +1121,7 @@
     {
       "type": "Connector",
       "details": {
-        "id": 172
+        "id": 268
       },
       "source": 123,
       "destination": 1
@@ -1257,7 +1129,7 @@
     {
       "type": "Connector",
       "details": {
-        "id": 173
+        "id": 269
       },
       "source": 125,
       "destination": 1
@@ -1265,7 +1137,7 @@
     {
       "type": "Connector",
       "details": {
-        "id": 174
+        "id": 270
       },
       "source": 127,
       "destination": 1
@@ -1273,7 +1145,7 @@
     {
       "type": "Connector",
       "details": {
-        "id": 175
+        "id": 271
       },
       "source": 129,
       "destination": 1
@@ -1281,7 +1153,7 @@
     {
       "type": "Connector",
       "details": {
-        "id": 176
+        "id": 272
       },
       "source": 131,
       "destination": 1
@@ -1289,7 +1161,7 @@
     {
       "type": "Connector",
       "details": {
-        "id": 177
+        "id": 273
       },
       "source": 133,
       "destination": 1
@@ -1297,7 +1169,7 @@
     {
       "type": "Connector",
       "details": {
-        "id": 178
+        "id": 274
       },
       "source": 135,
       "destination": 16
@@ -1305,7 +1177,7 @@
     {
       "type": "Connector",
       "details": {
-        "id": 179
+        "id": 275
       },
       "source": 137,
       "destination": 2
@@ -1313,7 +1185,7 @@
     {
       "type": "Connector",
       "details": {
-        "id": 180
+        "id": 276
       },
       "source": 139,
       "destination": 11
@@ -1321,7 +1193,7 @@
     {
       "type": "Connector",
       "details": {
-        "id": 181
+        "id": 277
       },
       "source": 141,
       "destination": 11
@@ -1329,7 +1201,7 @@
     {
       "type": "Connector",
       "details": {
-        "id": 182
+        "id": 278
       },
       "source": 143,
       "destination": 6
@@ -1337,7 +1209,7 @@
     {
       "type": "Connector",
       "details": {
-        "id": 183
+        "id": 279
       },
       "source": 145,
       "destination": 6
@@ -1345,7 +1217,7 @@
     {
       "type": "Connector",
       "details": {
-        "id": 184
+        "id": 280
       },
       "source": 147,
       "destination": 37
@@ -1353,7 +1225,7 @@
     {
       "type": "Connector",
       "details": {
-        "id": 185
+        "id": 281
       },
       "source": 149,
       "destination": 5
@@ -1361,7 +1233,7 @@
     {
       "type": "Connector",
       "details": {
-        "id": 186
+        "id": 282
       },
       "source": 151,
       "destination": 5
@@ -1369,7 +1241,7 @@
     {
       "type": "Connector",
       "details": {
-        "id": 187
+        "id": 283
       },
       "source": 157,
       "destination": 3
@@ -1377,7 +1249,7 @@
     {
       "type": "Connector",
       "details": {
-        "id": 188
+        "id": 284
       },
       "source": 159,
       "destination": 3
@@ -1385,7 +1257,7 @@
     {
       "type": "Connector",
       "details": {
-        "id": 189
+        "id": 285
       },
       "source": 161,
       "destination": 4
@@ -1393,54 +1265,10 @@
     {
       "type": "Connector",
       "details": {
-        "id": 190
+        "id": 286
       },
       "source": 163,
       "destination": 4
-    },
-    {
-      "type": "RelationshipConnector",
-      "details": {
-        "slotIndex": 0,
-        "id": 193
-      },
-      "source": 15,
-      "destination": 192
-    },
-    {
-      "type": "RelationshipConnector",
-      "details": {
-        "slotIndex": 1,
-        "id": 194
-      },
-      "source": 191,
-      "destination": 192
-    },
-    {
-      "type": "RelationshipConnector",
-      "details": {
-        "slotIndex": 0,
-        "id": 196
-      },
-      "source": 191,
-      "destination": 195
-    },
-    {
-      "type": "RelationshipConnector",
-      "details": {
-        "slotIndex": 1,
-        "id": 197
-      },
-      "source": 12,
-      "destination": 195
-    },
-    {
-      "type": "Connector",
-      "details": {
-        "id": 199
-      },
-      "source": 198,
-      "destination": 191
     },
     {
       "type": "RelationshipConnector",
@@ -1459,6 +1287,32 @@
       },
       "source": 12,
       "destination": 200
+    },
+    {
+      "type": "Connector",
+      "details": {
+        "id": 288
+      },
+      "source": 56,
+      "destination": 12
+    },
+    {
+      "type": "RelationshipConnector",
+      "details": {
+        "slotIndex": 0,
+        "id": 290
+      },
+      "source": 12,
+      "destination": 289
+    },
+    {
+      "type": "RelationshipConnector",
+      "details": {
+        "slotIndex": 1,
+        "id": 291
+      },
+      "source": 15,
+      "destination": 289
     }
   ],
   "width": 1200,
