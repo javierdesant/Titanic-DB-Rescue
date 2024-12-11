@@ -12,4 +12,5 @@ WHERE entretenimiento =
        HAVING SUM(cantidad) >= ALL (SELECT SUM(cantidad)
                                     FROM gastos
                                     GROUP BY entretenimiento))
-GROUP BY cubierta, lado_cabina, numero_cabina;
+GROUP BY cubierta, lado_cabina, numero_cabina
+ORDER BY cubierta;
