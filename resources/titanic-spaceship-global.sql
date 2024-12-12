@@ -1,6 +1,5 @@
-# TODO: find a better db name
-CREATE DATABASE SpaceTitanicDB;
-USE SpaceTitanicDB;
+CREATE DATABASE titanic_spaceship_global;
+USE titanic_spaceship_global;
 
 CREATE TABLE passengers
 (
@@ -32,7 +31,6 @@ CREATE TABLE passengers
         ON UPDATE CASCADE
 );
 
-# FIXME: expenses referential structure is not clear
 CREATE TABLE expenses
 (
     passengerId INT,
@@ -40,10 +38,10 @@ CREATE TABLE expenses
     amount      DECIMAL(10, 2) NOT NULL,
     PRIMARY KEY (passengerId, facility),
     FOREIGN KEY (passengerId) REFERENCES passengers (passengerId)
-        ON DELETE CASCADE
+        ON DELETE SET NULL
         ON UPDATE CASCADE,
     FOREIGN KEY (facility) REFERENCES entertainment (facility)
-        ON DELETE RESTRICT
+        ON DELETE SET NULL
         ON UPDATE CASCADE
 );
 
@@ -65,7 +63,7 @@ CREATE TABLE cabins
 CREATE TABLE decks
 (
     letter CHAR(1) PRIMARY KEY,
-    class  ENUM ('Primera', 'Segunda', 'Tercera') NOT NULL
+    class ENUM ('First', 'Second', 'Third') NOT NULL
 );
 
 CREATE TABLE robots
