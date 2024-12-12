@@ -42,5 +42,5 @@ GRANT SELECT ON entretenimiento_pasajeros TO analista_datos;
 SELECT *
 FROM entretenimiento_pasajeros;
 SHOW GRANTS FOR analista_datos;
-DROP VIEW entretenimiento_pasajeros;
 DROP USER analista_datos;
+DROP VIEW entretenimiento_pasajeros;
