@@ -1,4 +1,4 @@
-CREATE DATABASE titanic_spaceship_global;
+CREATE DATABASE IF NOT EXISTS titanic_spaceship_global;
 USE titanic_spaceship_global;
 
 CREATE TABLE passengers
