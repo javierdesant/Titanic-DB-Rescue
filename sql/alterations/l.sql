@@ -6,7 +6,7 @@
 # nuevo campo denominado tutor.
 
 ALTER TABLE pasajeros
-    ADD tutor VARCHAR(7),
+    ADD tutor VARCHAR(7) NULL,
     ADD CONSTRAINT fk_tutor FOREIGN KEY (tutor) REFERENCES pasajeros (id)
         ON DELETE SET NULL
         ON UPDATE CASCADE;
@@ -23,7 +23,43 @@ ALTER TABLE pasajeros
 DELIMITER $$
 CREATE PROCEDURE asignarTutores()
 BEGIN
-    -- TODO
+DECLARE done INT DEFAULT 0;
+DECLARE pasajero_id VARCHAR(7);
+DECLARE letra_cubierta VARCHAR(1);
+DECLARE numero_cabina INT;
+DECLARE lado_cabina VARCHAR(1);
+DECLARE tutor_id VARCHAR(7) DEFAULT NULL;
+DECLARE cur CURSOR FOR
+    SELECT p.id, p.cubierta, p.numero_cabina, p.lado_cabina
+    FROM pasajeros p
+    WHERE p.edad < 18 AND p.criosueño = 0;
+DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = 1;
+
+OPEN cur;
+read_loop: LOOP
+    FETCH cur INTO pasajero_id, letra_cubierta, numero_cabina, lado_cabina;
+    IF done THEN
+        LEAVE read_loop;
+    END IF;
+
+    SELECT p.id INTO tutor_id
+    FROM pasajeros p 
+    WHERE p.cubierta = letra_cubierta AND p.numero_cabina = numero_cabina AND p.lado_cabina = lado_cabina AND p.edad >= 18
+    ORDER BY p.edad DESC
+    LIMIT 1;
+
+    IF tutor_id IS NOT NULL THEN
+        UPDATE pasajeros
+        SET tutor = tutor_id
+        WHERE id = pasajero_id;
+    ELSE
+        UPDATE pasajeros
+        SET criosueño = 1
+        WHERE id = pasajero_id;
+    END IF;
+END LOOP;
+
+CLOSE cur;
 END $$
 DELIMITER ;
 
