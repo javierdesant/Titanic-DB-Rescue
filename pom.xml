@@ -6,7 +6,7 @@
 
     <groupId>bbdd-2425</groupId>
     <artifactId>practica-combinada</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
 
     <dependencies>
         <dependency>
