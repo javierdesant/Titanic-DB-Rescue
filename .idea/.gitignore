@@ -1,32 +1,32 @@
 # User-specific stuff
-/workspace.xml
-/tasks.xml
-/usage.statistics.xml
-/dictionaries
-/shelf/
+workspace.xml
+tasks.xml
+usage.statistics.xml
+dictionaries
+shelf
 
 # AWS User-specific
-/aws.xml
+aws.xml
 
 # Generated files
-/contentModel.xml
+contentModel.xml
 
 # Misc files
 misc.xml
 sqldialects.xml
 
 # Editor-based HTTP Client requests
-/httpRequests/
+httpRequests
 
 # Sensitive or high-churn files
-/dataSources/
-/dataSources.ids
-/dataSources.local.xml
-/sqlDataSources.xml
-/dynamic.xml
-/uiDesigner.xml
-/dbnavigator.xml
+dataSources
+dataSources.ids
+dataSources.local.xml
+sqlDataSources.xml
+dynamic.xml
+uiDesigner.xml
+dbnavigator.xml
 
 # Gradle
-/gradle.xml
-/libraries
+gradle.xml
+libraries
