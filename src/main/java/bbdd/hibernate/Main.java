@@ -27,7 +27,7 @@ public class Main
     {
 
         StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
-                .configure()
+                .configure("hibernate.cfg.xml")
                 .build();
 
         SessionFactory sessionFactory = new MetadataSources(registry)
@@ -42,13 +42,12 @@ public class Main
         session.beginTransaction();
 
         Pasajero pasajero = new Pasajero("Din Djarin");
+        session.save(pasajero);
 
         Entretenimiento entretenimiento = new Entretenimiento("Bounty Hunting");
+        session.save(entretenimiento);
 
         Gasto gasto = new Gasto(pasajero, entretenimiento, 100);
-
-        session.save(pasajero);
-        session.save(entretenimiento);
         session.save(gasto);
 
         session.getTransaction().commit();
@@ -61,33 +60,41 @@ public class Main
         session.beginTransaction();
 
         try {
-            reader = Files.newBufferedReader(Paths.get("resources/gastos.csv"));
-            csvParser = new CSVParser(reader, CSVFormat.DEFAULT.withHeader("Pasajero", "Entretenimiento", "Cantidad").withSkipHeaderRecord());
+            reader = Files.newBufferedReader(Paths.get("src/main/resources/gastos.csv"));
+            csvParser = new CSVParser(reader, CSVFormat.DEFAULT.withHeader("pasajero", "entretenimiento", "cantidad").withSkipHeaderRecord());
             for (CSVRecord csvRecord : csvParser) {
-                String pasajeroNombre = csvRecord.get("Pasajero");
-                String entretenimientoNombre = csvRecord.get("Entretenimiento");
-                int cantidad = Integer.parseInt(csvRecord.get("Cantidad"));
+                String pasajeroNombre = csvRecord.get("pasajero");
+                String entretenimientoNombre = csvRecord.get("entretenimiento");
+                int cantidad = Integer.parseInt(csvRecord.get("cantidad"));
 
-                pasajero = new Pasajero(pasajeroNombre);
+                Pasajero pasajeroCSV = new Pasajero(pasajeroNombre);
+                session.save(pasajeroCSV);
 
-                entretenimiento = new Entretenimiento(entretenimientoNombre);
+                Entretenimiento entretenimientoCSV = new Entretenimiento(entretenimientoNombre);
+                session.save(entretenimientoCSV);
 
-                gasto = new Gasto(pasajero, entretenimiento, cantidad);
-
-                session.save(pasajero);
-                session.save(entretenimiento);
-                session.save(gasto);
+                Gasto gastoCSV = new Gasto(pasajeroCSV, entretenimientoCSV, cantidad);
+                session.save(gastoCSV);
             }
-            csvParser.close();
-            reader.close();
-            
+            session.getTransaction().commit();
         } catch (IOException e) {
             e.printStackTrace();
+            session.getTransaction().rollback();
+        } finally {
+            try {
+                if (reader != null) {
+                    reader.close();
+                }
+                if (csvParser != null) {
+                    csvParser.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
-        
-        session.getTransaction().commit();
-        
+
         session.close();
+        sessionFactory.close();
 
     }
 }
