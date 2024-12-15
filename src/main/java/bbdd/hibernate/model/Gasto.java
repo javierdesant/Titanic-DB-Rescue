@@ -12,11 +12,11 @@ public class Gasto {
     @Column(name = "id")
     private Long id;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "pasajero")
     private Pasajero pasajero;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "entretenimiento")
     private Entretenimiento entretenimiento;
 
