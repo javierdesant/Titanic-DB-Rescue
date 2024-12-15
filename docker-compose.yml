@@ -4,7 +4,7 @@ services:
                   image: mysql:latest
                   restart: always
                   environment:
-                    MYSQL_DATABASE: 'db'
+                    MYSQL_DATABASE: 'titanic_spaceship'
                     MYSQL_USER: 'passenger'
                     MYSQL_PASSWORD: 'titanic'
                     MYSQL_ROOT_PASSWORD: 'titanic'
