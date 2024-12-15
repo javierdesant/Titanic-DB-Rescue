@@ -43,6 +43,7 @@ BEGIN
     OPEN cur;
     read_loop:
     LOOP
+        SET done = 0;
         FETCH cur INTO pasajero_id, letra, numero, lado;
         IF done THEN
             LEAVE read_loop;
@@ -75,7 +76,7 @@ END $$
 DELIMITER ;
 
 
-CALL asignarTutores(); -- FIXME: it only updates one row on call
+CALL asignarTutores();
 SELECT id, nombre, edad, criosueño, CONCAT(cubierta, '-', numero_cabina, '-', lado_cabina) AS cabina_asignada, tutor
 FROM pasajeros
 WHERE (cubierta, lado_cabina, numero_cabina) IN
