@@ -9,14 +9,14 @@ public class Gasto {
 
     @Id
     @GeneratedValue
-    //no hay @Colum, porque no existe la columna , pero se crea el atributo para evitar el uso de una clave primaria compuesta.
+    @Column(name = "id")
     private Long id;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "pasajero")
     private Pasajero pasajero;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "entretenimiento")
     private Entretenimiento entretenimiento;
 
