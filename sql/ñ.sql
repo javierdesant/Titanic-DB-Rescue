@@ -53,9 +53,7 @@ BEGIN
         WHERE id = NEW.pasajero;
     END IF;
 END //
-DELIMITER ;
 
-DELIMITER //
 CREATE TRIGGER ins_vip
     AFTER INSERT
     ON gastos
