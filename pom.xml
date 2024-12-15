@@ -5,14 +5,33 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>bbdd-2425</groupId>
-    <artifactId>practica-combinada</artifactId>
+    <artifactId>practica-titanic-spaceship</artifactId>
     <version>1.0</version>
+
+    <developers>
+        <developer>
+            <id>Javier de Santiago</id>
+            <email>javier.desantiago@alumnos.upm.es</email>
+        </developer>
+        <developer>
+            <id>Jhonatan Ferreira</id>
+            <email>jhonatan.ferreira@alumnos.upm.es</email>
+        </developer>
+        <developer>
+            <id>Rafael Iralde</id>
+            <email>rafael.iralde@alumnos.upm.es</email>
+        </developer>
+        <developer>
+            <id>Gonzalo Mateos</id>
+            <email>gonzalo.mateos@alumnos.upm.es</email>
+        </developer>
+    </developers>
 
     <dependencies>
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.28</version>
+            <version>8.0.33</version>
         </dependency>
 
         <dependency>
