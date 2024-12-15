@@ -5,11 +5,14 @@
 SELECT cubierta, lado_cabina AS lado, numero_cabina AS numero
 FROM pasajeros p
          JOIN gastos g ON p.id = g.pasajero
-WHERE vip = 0 -- FIXME: im not sure this query is correct
 GROUP BY cubierta, lado_cabina, numero_cabina
 HAVING SUM(cantidad) > 2 * (SELECT AVG(total)
                             FROM (SELECT SUM(cantidad) AS total
                                   FROM pasajeros p
                                            JOIN gastos g ON p.id = g.pasajero
                                   GROUP BY cubierta, lado_cabina, numero_cabina) AS t1)
-   AND COUNT(id) > 3;
+   AND (cubierta, lado_cabina, numero_cabina) IN (SELECT cubierta, lado_cabina, numero_cabina
+                                                  FROM pasajeros p
+                                                  WHERE vip = 0
+                                                  GROUP BY cubierta, lado_cabina, numero_cabina
+                                                  HAVING COUNT(p.id) > 3);
