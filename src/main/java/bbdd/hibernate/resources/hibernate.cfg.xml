@@ -26,9 +26,9 @@
 
         <property name="hibernate.hbm2ddl.auto">update</property>
 
-        <mapping class="bbdd.model.Pasajero"/>
-        <mapping class="bbdd.model.Gasto"/>
-        <mapping class="bbdd.model.Entretenimiento"/>
+        <mapping class="bbdd.hibernate.model.Pasajero"/>
+        <mapping class="bbdd.hibernate.model.Gasto"/>
+        <mapping class="bbdd.hibernate.model.Entretenimiento"/>
 
     </session-factory>
 

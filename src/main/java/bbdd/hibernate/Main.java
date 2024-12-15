@@ -1,10 +1,8 @@
-package bbdd;
+package bbdd.hibernate;
 
-import java.io.IOException;
-import java.io.Reader;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-
+import bbdd.hibernate.model.Entretenimiento;
+import bbdd.hibernate.model.Gasto;
+import bbdd.hibernate.model.Pasajero;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
@@ -14,9 +12,10 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
-import bbdd.model.Pasajero;
-import bbdd.model.Entretenimiento;
-import bbdd.model.Gasto;
+import java.io.IOException;
+import java.io.Reader;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 
 public class Main 
