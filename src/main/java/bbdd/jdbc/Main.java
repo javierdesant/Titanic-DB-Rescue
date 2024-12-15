@@ -13,6 +13,7 @@ public class Main {
     private static PreparedStatement stmtNuevoPl;
     private static PreparedStatement stmtListaPC;
     private static PreparedStatement stmtListaO;
+    private static PreparedStatement stmtDeletePl;
 
     public static void main (String [] args) throws Exception {
         Class.forName("com.mysql.cj.jdbc.Driver");
@@ -22,6 +23,7 @@ public class Main {
     
         // 1. Añade los planetas a la base de datos
         stmtNuevoPl = conn.prepareStatement("INSERT INTO planetas (nombre, masa, radio, sistema) VALUES (?, ?, ?, ?)");
+        stmtDeletePl = conn.prepareStatement("DELETE FROM planetas WHERE nombre = ?");
 
         nuevoPlaneta("Kepler-186f", 3.3e24, 8800 , "Copernico");
         nuevoPlaneta("HD 209458 b (Osiris)", 1.4e27, 100000, "Beta Pictoris");
@@ -44,6 +46,7 @@ public class Main {
     }
 
     private static void nuevoPlaneta (String nombre, double masa, int radio, String sistema) throws SQLException {
+        eliminarPlaneta(nombre);
         stmtNuevoPl.setString(1, nombre);
         stmtNuevoPl.setDouble(2, masa);
         stmtNuevoPl.setInt(3, radio);
@@ -51,30 +54,25 @@ public class Main {
         stmtNuevoPl.executeUpdate();
     }
 
-    private static void listaPasajerosCabina (String cubierta, int cabina, String lado) throws SQLException {
+    private static void eliminarPlaneta(String nombre) throws SQLException {
+        stmtDeletePl.setString(1, nombre);
+        stmtDeletePl.executeUpdate();
+    }
+
+    private static void listaPasajerosCabina(String cubierta, int cabina, String lado) throws SQLException {
         stmtListaPC.setString(1, cubierta);
         stmtListaPC.setInt(2, cabina);
         stmtListaPC.setString(3, lado);
         ResultSet rs = stmtListaPC.executeQuery();
-
-        System.out.println("Pasajero(s) de la cabina " + cubierta + "-" + cabina + "-" + lado + ":");
         while (rs.next()) {
-            String nombre = rs.getString("nombre");
-            int edad = rs.getInt("edad");
-
-            System.out.println("Nombre = " + nombre + ", Edad = " + edad);
+            System.out.println("Nombre: " + rs.getString("nombre") + ", Edad: " + rs.getInt("edad"));
         }
     }
 
     private static void listaOrigenes() throws SQLException {
         ResultSet rs = stmtListaO.executeQuery();
-
         while (rs.next()) {
-            String sistema = rs.getString("sistema");
-            String planeta = rs.getString("nombre");
-            int numPasajeros = rs.getInt("numPasajeros");
-
-            System.out.println("Sistema = " + sistema + ", Planeta = " + planeta + ", Numero de pasajeros = " + numPasajeros);
+            System.out.println("Sistema: " + rs.getString("sistema") + ", Planeta: " + rs.getString("nombre") + ", Número de pasajeros: " + rs.getInt("numPasajeros"));
         }
     }
 }
