@@ -75,7 +75,7 @@ END $$
 DELIMITER ;
 
 
-CALL asignarTutores();
+CALL asignarTutores(); -- FIXME: it only updates one row on call
 SELECT id, nombre, edad, criosueño, CONCAT(cubierta, '-', numero_cabina, '-', lado_cabina) AS cabina_asignada, tutor
 FROM pasajeros
 WHERE (cubierta, lado_cabina, numero_cabina) IN
