@@ -4,9 +4,6 @@
 # identificar al tutor legal en caso de que el pasajero sea menor de edad. Para
 # implementar este cambio, es necesario actualizar la tabla pasajeros y añadir un
 # nuevo campo denominado tutor.
-ALTER TABLE pasajeros
-    DROP CONSTRAINT fk_tutor,
-    DROP COLUMN tutor;
 
 ALTER TABLE pasajeros
     ADD tutor VARCHAR(7) NULL,
@@ -43,7 +40,6 @@ BEGIN
     OPEN cur;
     read_loop:
     LOOP
-        SET done = 0;
         FETCH cur INTO pasajero_id, letra, numero, lado;
         IF done THEN
             LEAVE read_loop;
@@ -89,3 +85,7 @@ ORDER BY cubierta, lado_cabina, numero_cabina;
 SELECT *
 FROM pasajeros
 WHERE tutor IS NOT NULL;
+
+ALTER TABLE pasajeros
+    DROP CONSTRAINT fk_tutor,
+    DROP COLUMN tutor;
