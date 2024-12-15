@@ -28,9 +28,9 @@ public class Main {
         // 1. Añade los planetas a la base de datos
         stmtNuevoPl = conn.prepareStatement("INSERT INTO planetas (nombre, masa, radio, sistema) VALUES (?, ?, ?, ?)");
 
-        // nuevoPlaneta("Kepler-186f", 3.3e24, 8800 , "Copernico");
-        // nuevoPlaneta("HD 209458 b (Osiris)", 1.4e27, 100000, "Beta Pictoris");
-        // nuevoPlaneta("LHS 1140 b", 8.3e24, 8800, "Copernico");
+        nuevoPlaneta("Kepler-186f", 3.3e24, 8800 , "Copernico");
+        nuevoPlaneta("HD 209458 b (Osiris)", 1.4e27, 100000, "Beta Pictoris");
+        nuevoPlaneta("LHS 1140 b", 8.3e24, 8800, "Copernico");
         
         // 2. Muestra por pantalla la lista de pasajeros de la cabina A-60-S
         stmtListaPC = conn.prepareStatement("SELECT nombre, edad FROM pasajeros WHERE cubierta = ? AND numero_cabina = ? AND lado_cabina = ?");
