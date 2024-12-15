@@ -1,6 +1,7 @@
 # Stellar Voyage: Rescate de la Base de Datos del Titanic
 
-Bienvenido a *Stellar Voyage: Rescate de la Base de Datos del Titanic*, un proyecto futurista donde tu misión es
+Bienvenido a *[Stellar Voyage](https://github.com/javierdesant/Titanic-DB-Rescue): Rescate de la Base de Datos del
+Titanic*, un proyecto futurista donde tu misión es
 restaurar y optimizar los sistemas de base de datos de la legendaria nave espacial Titanic.
 
 ---
@@ -49,10 +50,28 @@ StellarVoyage/
 
 ---
 
+## 👨‍🏫 **Profesor**
+
+- **Edgar Talavera**
+
+---
+
+## 👨‍💻 **Autores**
+
+- Jhonatan Ferreira Souza ([JhonyRetro](https://github.com/JhonyRetro)) | **jhonatan.ferreiras@alumnos.upm.es**
+
+- Javier de Santiago Soto ([JavierDeSant](https://github.com/javierdesant)) | **javier.desantiago@alumnos.upm.es**
+
+- Rafael Iralde Domínguez ([Cafileiro](https://github.com/Cafileiro)) | **rafael.iralde@alumnos.upm.es**
+
+- Gonzalo Mateos García ([gomago43](https://github.com/gomago43)) | **gonzalo.mateos@alumnos.upm.es**
+
+---
+
 ## 🌌 **Agradecimientos**
 
 - Este proyecto es una solución desarrollada para la **asignatura de Bases de Datos** en la **Universidad Politécnica de
   Madrid (UPM)**.
 - El marco y las directrices del proyecto fueron proporcionados por el profesorado del curso. Este repositorio contiene
   la implementación y solución creada por el autor basada en esos materiales.
-- Un agradecimiento especial a los profesores y compañeros por sus valiosas ideas y apoyo durante el curso.
+- Un agradecimiento especial a nuestro profesor por sus valiosas ideas y apoyo durante el curso.
